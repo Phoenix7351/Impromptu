@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <CloudKit/CloudKit.h>
 
 @interface ViewController ()
 
@@ -22,6 +23,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    CKRecord *message = [[CKRecord alloc] initWithRecordType:@"Message"];
+    
+    CKContainer *container = [CKContainer defaultContainer];
+    
+    CKDatabase *database = [container publicCloudDatabase];
+    
+    CKQuery *query = [[CKQuery alloc] initWithRecordType:@"Message" predicate:[NSPredicate predicateWithFormat:@"TRUEPREDICATE"]];
+    
+    CKQueryOperation *operation = [[CKQueryOperation alloc] initWithQuery:query];
+    operation.recordFetchedBlock = ^(CKRecord *record) {
+        NSLog(@"s word");
+    };
+    
+    [database addOperation:operation];
+    
+    CKRecordZone *rz = [CKRecordZone defaultRecordZone];
+    [database performQuery:query inZoneWithID:rz.zoneID completionHandler:^(NSArray *results, NSError *error) {
+        NSLog(@"Take a look at who?");
+    }];
+    
+    NSLog(@"Pen is");
 }
 
 - (void)didReceiveMemoryWarning {
