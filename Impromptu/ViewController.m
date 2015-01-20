@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <CloudKit/CloudKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -16,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *userMessage;
 @property (weak, nonatomic) IBOutlet UITableView *messageList;
 @property (strong, nonatomic) NSMutableArray *messages;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+
 - (IBAction)textEntered:(id)sender;
 
 @end
@@ -61,6 +64,13 @@ NSString * const kMessageRecordLocationAttribute = @"Location";
         });
     }];
     
+    if ([CLLocationManager locationServicesEnabled]) {
+        if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+            [self.locationManager requestWhenInUseAuthorization];
+        } else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedWhenInUse) {
+            [self.locationManager startUpdatingLocation];
+        }
+    }    
 }
 
 - (IBAction)textEntered:(id)sender {
@@ -72,9 +82,9 @@ NSString * const kMessageRecordLocationAttribute = @"Location";
     newMessageRecord[kMessageRecordTextBodyAttribute] = messageString;
     
     //Use real location!
-    CLLocation *location = [[CLLocation alloc] initWithLatitude:32.00 longitude:-132.456];
+    //CLLocation *location = [[CLLocation alloc] initWithLatitude:32.00 longitude:-132.456];
     
-    newMessageRecord[kMessageRecordLocationAttribute] = location;
+    newMessageRecord[kMessageRecordLocationAttribute] = self.locationManager.location;
     
     [self.ckDatabase saveRecord:newMessageRecord completionHandler:^(CKRecord *record, NSError *error) {
         if (error == nil) {
@@ -111,6 +121,15 @@ NSString * const kMessageRecordLocationAttribute = @"Location";
         _ckDatabase = [[CKContainer defaultContainer] publicCloudDatabase];
     }
     return _ckDatabase;
+}
+
+- (CLLocationManager *)locationManager {
+    if (_locationManager == nil) {
+        _locationManager = [[CLLocationManager alloc] init];
+        _locationManager.distanceFilter = kCLDistanceFilterNone; 
+        _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    }
+    return _locationManager;
 }
 
 @end

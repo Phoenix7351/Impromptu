@@ -15,6 +15,7 @@
 		D0303A261A64BA6B000B6E27 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0303A241A64BA6B000B6E27 /* LaunchScreen.xib */; };
 		D0303A321A64BA6B000B6E27 /* ImpromptuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0303A311A64BA6B000B6E27 /* ImpromptuTests.m */; };
 		D0303A401A64CF90000B6E27 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0303A3F1A64CF90000B6E27 /* CloudKit.framework */; };
+		D0303A421A6DF55D000B6E27 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0303A411A6DF55D000B6E27 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		D0303A311A64BA6B000B6E27 /* ImpromptuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImpromptuTests.m; sourceTree = "<group>"; };
 		D0303A3E1A64CF8E000B6E27 /* Impromptu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Impromptu.entitlements; sourceTree = "<group>"; };
 		D0303A3F1A64CF90000B6E27 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		D0303A411A6DF55D000B6E27 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0303A421A6DF55D000B6E27 /* CoreLocation.framework in Frameworks */,
 				D0303A401A64CF90000B6E27 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,6 +70,7 @@
 		D0303A091A64BA6B000B6E27 = {
 			isa = PBXGroup;
 			children = (
+				D0303A411A6DF55D000B6E27 /* CoreLocation.framework */,
 				D0303A3F1A64CF90000B6E27 /* CloudKit.framework */,
 				D0303A141A64BA6B000B6E27 /* Impromptu */,
 				D0303A2E1A64BA6B000B6E27 /* ImpromptuTests */,
