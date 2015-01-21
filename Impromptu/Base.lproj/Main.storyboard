@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
@@ -96,6 +96,32 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="ckY-hP-QnY"/>
                                 </connections>
                             </tableView>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qa2-kQ-wZt">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBg-Ov-Z6b">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="40" width="368" height="21"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="DBg-Ov-Z6b"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="250" width="368" height="100"/>
+                                    <mask key="subviews">
+                                        <include reference="DBg-Ov-Z6b"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -112,6 +138,7 @@
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="oyB-8I-Chd"/>
+                                <exclude reference="qa2-kQ-wZt"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="58k-tQ-zaT"/>
@@ -124,6 +151,7 @@
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="oyB-8I-Chd"/>
+                                <include reference="qa2-kQ-wZt"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="58k-tQ-zaT"/>
@@ -135,6 +163,8 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="qa2-kQ-wZt" id="Gmw-0Y-r2U"/>
+                        <outlet property="confirmationMessage" destination="DBg-Ov-Z6b" id="DvY-x3-xaY"/>
                         <outlet property="messageList" destination="oyB-8I-Chd" id="7FW-zh-uOE"/>
                         <outlet property="userMessage" destination="P5j-pT-53c" id="Idc-Qh-Rd8"/>
                     </connections>

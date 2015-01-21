@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *userMessage;
 @property (weak, nonatomic) IBOutlet UITableView *messageList;
 @property (strong, nonatomic) NSMutableArray *messages;
+@property (weak, nonatomic) IBOutlet UILabel *confirmationMessage;
+@property (weak, nonatomic) IBOutlet UIView *backgroundView;
 - (IBAction)textEntered:(id)sender;
 
 @end
@@ -79,8 +81,18 @@ NSString * const kMessageRecordLocationAttribute = @"Location";
     [self.ckDatabase saveRecord:newMessageRecord completionHandler:^(CKRecord *record, NSError *error) {
         if (error == nil) {
             NSLog(@"Message Saved to cloud");
+            self.confirmationMessage.text = @"Message Entered";
+            
         }
     }];
+    //use nested animations to avoid conflict
+    [UIView animateWithDuration:1.0 delay:0.0 options:(UIViewAnimationOptionCurveLinear) animations:^(){self.backgroundView.alpha = 1.0; } completion:^(BOOL finished) {
+        [UIView animateWithDuration:1.0 delay:1.0 options:0 animations:^(){ self.backgroundView.alpha = 0.0;} completion:^(BOOL finished) {
+            
+        }];
+        
+    }];
+
     
     self.userMessage.text = @"";
     
