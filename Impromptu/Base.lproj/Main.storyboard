@@ -1,11 +1,146 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="E22-SM-hq8">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="d4x-2J-Blf">
+            <objects>
+                <viewController id="E22-SM-hq8" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qai-zp-zVE"/>
+                        <viewControllerLayoutGuide type="bottom" id="o59-4y-gcc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="REp-Ro-2bw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JjX-BN-y6n">
+                                <rect key="frame" x="150" y="120" width="300" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cFd-01-4Qq">
+                                <rect key="frame" x="150" y="158" width="300" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up/Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPB-iH-45j">
+                                <rect key="frame" x="0.0" y="47" width="600" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="VPB-iH-45j" secondAttribute="centerX" id="3hg-3a-A2m"/>
+                            <constraint firstItem="JjX-BN-y6n" firstAttribute="width" secondItem="REp-Ro-2bw" secondAttribute="width" multiplier="0.5" id="7Va-XM-LZX"/>
+                            <constraint firstItem="cFd-01-4Qq" firstAttribute="top" secondItem="JjX-BN-y6n" secondAttribute="bottom" constant="8" id="8Ee-yG-Qxm"/>
+                            <constraint firstItem="VPB-iH-45j" firstAttribute="width" secondItem="REp-Ro-2bw" secondAttribute="width" id="AfE-yy-EMv"/>
+                            <constraint firstAttribute="centerY" secondItem="JjX-BN-y6n" secondAttribute="centerY" id="IeO-kC-fqr"/>
+                            <constraint firstAttribute="centerX" secondItem="JjX-BN-y6n" secondAttribute="centerX" id="K0S-AG-8fi"/>
+                            <constraint firstItem="JjX-BN-y6n" firstAttribute="leading" secondItem="cFd-01-4Qq" secondAttribute="leading" id="MRr-om-5JX"/>
+                            <constraint firstItem="JjX-BN-y6n" firstAttribute="top" secondItem="VPB-iH-45j" secondAttribute="bottom" constant="43" id="UzH-pr-vD7"/>
+                            <constraint firstItem="JjX-BN-y6n" firstAttribute="trailing" secondItem="cFd-01-4Qq" secondAttribute="trailing" id="hnG-Br-S5D"/>
+                            <constraint firstItem="JjX-BN-y6n" firstAttribute="top" secondItem="qai-zp-zVE" secondAttribute="bottom" constant="100" id="qci-mb-qXz"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="IeO-kC-fqr"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="w81-nw-6Cq" appends="YES" id="ih5-Of-wvk"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ec3-Bs-SK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="w81-nw-6Cq">
+                    <connections>
+                        <segue destination="4x1-yn-uge" kind="show" id="yXN-s8-2uZ"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-719" y="367"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="X4B-lZ-Vxa">
+            <objects>
+                <viewController id="4x1-yn-uge" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dz0-Wz-Qft"/>
+                        <viewControllerLayoutGuide type="bottom" id="0sh-eq-K8e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iIc-3g-Ev1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CM3-fq-K6j">
+                                <rect key="frame" x="0.0" y="-33" width="600" height="601"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="2Du-g0-WUq" appends="YES" id="F01-b8-t7V"/>
+                                </connections>
+                            </label>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i0b-gV-piI">
+                                <rect key="frame" x="0.0" y="551" width="600" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem title="Home" id="Gy3-Ix-eex"/>
+                                    <tabBarItem title="Following" id="S2M-nW-DMM"/>
+                                    <tabBarItem title="Followed" id="3RF-3x-SN4"/>
+                                    <tabBarItem title="Entertainment" id="19x-7P-Aat"/>
+                                    <tabBarItem title="Business" id="rdf-Ua-zJH"/>
+                                    <tabBarItem systemItem="more" id="t2f-d4-N26"/>
+                                </items>
+                            </tabBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mjf-Qr-Mpp">
+                                <rect key="frame" x="21" y="38" width="75" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="E22-SM-hq8" kind="show" id="xuC-w9-3Rh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CM3-fq-K6j" firstAttribute="leading" secondItem="Mjf-Qr-Mpp" secondAttribute="trailing" constant="-96" id="3u1-5b-Vri"/>
+                            <constraint firstItem="CM3-fq-K6j" firstAttribute="height" secondItem="Mjf-Qr-Mpp" secondAttribute="height" multiplier="20" id="FDK-NX-Quy"/>
+                            <constraint firstItem="i0b-gV-piI" firstAttribute="width" secondItem="iIc-3g-Ev1" secondAttribute="width" id="K0Q-3d-qIK"/>
+                            <constraint firstAttribute="centerY" secondItem="CM3-fq-K6j" secondAttribute="centerY" constant="32.5" id="VtB-7m-GH8"/>
+                            <constraint firstItem="i0b-gV-piI" firstAttribute="leading" secondItem="iIc-3g-Ev1" secondAttribute="leadingMargin" constant="-16" id="ZZh-n8-y8E"/>
+                            <constraint firstItem="CM3-fq-K6j" firstAttribute="width" secondItem="Mjf-Qr-Mpp" secondAttribute="width" multiplier="8" id="dla-bp-xec"/>
+                            <constraint firstAttribute="centerX" secondItem="CM3-fq-K6j" secondAttribute="centerX" id="pM0-YD-8fN"/>
+                            <constraint firstItem="0sh-eq-K8e" firstAttribute="top" secondItem="i0b-gV-piI" secondAttribute="bottom" id="qLM-dn-aV7"/>
+                            <constraint firstItem="CM3-fq-K6j" firstAttribute="height" secondItem="iIc-3g-Ev1" secondAttribute="height" id="rQb-Cg-WvL"/>
+                            <constraint firstItem="CM3-fq-K6j" firstAttribute="width" secondItem="iIc-3g-Ev1" secondAttribute="width" id="xJk-tV-hpD"/>
+                            <constraint firstItem="CM3-fq-K6j" firstAttribute="top" secondItem="Mjf-Qr-Mpp" secondAttribute="bottom" constant="-100" id="z6N-it-n1w"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9jj-lo-q5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="2Du-g0-WUq">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" id="dBL-3j-BvU"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-81" y="367"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -19,7 +154,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzB-fn-uJH">
-                                <rect key="frame" x="501" y="27" width="83" height="30"/>
+                                <rect key="frame" x="441" y="27" width="143" height="30"/>
                                 <state key="normal" title="Submit">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -70,10 +205,9 @@
                                     <constraint firstAttribute="centerY" secondItem="DBg-Ov-Z6b" secondAttribute="centerY" constant="0.5" id="ovP-10-i5q"/>
                                     <constraint firstAttribute="centerX" secondItem="DBg-Ov-Z6b" secondAttribute="centerX" id="zAr-rL-rrm"/>
                                 </constraints>
-                                <variation key="widthClass=compact"/>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter a message..." borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P5j-pT-53c">
-                                <rect key="frame" x="16" y="28" width="480" height="30"/>
+                                <rect key="frame" x="16" y="28" width="420" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
@@ -83,6 +217,7 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="P5j-pT-53c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2Yi-4e-4vg"/>
                             <constraint firstAttribute="centerY" secondItem="qa2-kQ-wZt" secondAttribute="centerY" id="8LC-aI-Jeu"/>
@@ -108,8 +243,9 @@
                                 <exclude reference="Jeu-I7-Q7c"/>
                             </mask>
                         </variation>
-                        <variation key="heightClass=regular"/>
-                        <variation key="widthClass=compact"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="HqY-IF-Uiu" appends="YES" id="CR4-I5-tZy"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="qa2-kQ-wZt" id="Gmw-0Y-r2U"/>
@@ -119,8 +255,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="HqY-IF-Uiu">
+                    <connections>
+                        <segue destination="4x1-yn-uge" kind="show" id="Gvh-oU-qcW"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-94" y="367"/>
+            <point key="canvasLocation" x="604" y="372"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Gvh-oU-qcW"/>
+    </inferredMetricsTieBreakers>
 </document>
